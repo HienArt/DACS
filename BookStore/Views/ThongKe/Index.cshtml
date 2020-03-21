@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/bootstrap/css/bootstrap.min.css" />
+
+<link href="~/Content/assets/css/main.css" rel="stylesheet">
+<link href="~/Content/assets/css/font-style.css" rel="stylesheet">
+<link href="~/Content/assets/css/flexslider.css" rel="stylesheet">
+
+<script type="text/javascript" src="~/Content/assets/js/jquery.js"></script>
+<script type="text/javascript" src="~/Content/assets/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="~/Content/assets/js/lineandbars.js"></script>
+
+<script type="text/javascript" src="~/Content/assets/js/dash-charts.js"></script>
+<script type="text/javascript" src="~/Content/assets/js/gauge.js"></script>
+
+<!-- NOTY JAVASCRIPT -->
+<script type="text/javascript" src="~/Content/assets/js/noty/jquery.noty.js"></script>
+<script type="text/javascript" src="~/Content/assets/js/noty/layouts/top.js"></script>
+<script type="text/javascript" src="~/Content/assets/js/noty/layouts/topLeft.js"></script>
+<script type="text/javascript" src="~/Content/assets/js/noty/layouts/topRight.js"></script>
+<script type="text/javascript" src="~/Content/assets/js/noty/layouts/topCenter.js"></script>
+
+<!-- You can add more layouts if you want -->
+<script type="text/javascript" src="~/Content/assets/js/noty/themes/default.js"></script>
+<!-- <script type="text/javascript" src="assets/js/dash-noty.js"></script> This is a Noty bubble when you init the theme-->
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script src="~/Content/assets/js/jquery.flexslider.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="~/Content/assets/js/admin.js"></script>
+
+<style type="text/css">
+    body {
+        padding-top: 60px;
+    }
+</style>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- Google Fonts call. Font Used Open Sans & Raleway -->
+<link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#btn-blog-next").click(function () {
+            $('#blogCarousel').carousel('next')
+        });
+        $("#btn-blog-prev").click(function () {
+            $('#blogCarousel').carousel('prev')
+        });
+
+        $("#btn-client-next").click(function () {
+            $('#clientCarousel').carousel('next')
+        });
+        $("#btn-client-prev").click(function () {
+            $('#clientCarousel').carousel('prev')
+        });
+
+    });
+
+    $(window).load(function () {
+
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshow: true,
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+
+</script>    
+
+<div class="col-sm-3 col-lg-3">
+    <div class="dash-unit">
+        <dtitle>User Profile</dtitle>
+        <hr>
+        <div class="thumbnail">
+            <img src="~/Content/assets/images/face80x80.jpg" alt="Marcel Newman" class="img-circle">
+        </div><!-- /thumbnail -->
+        <h1>Marcel Newman</h1>
+        <h3>Madrid, Spain</h3>
+        <br>
+        <div class="info-user">
+            <span aria-hidden="true" class="li_user fs1"></span>
+            <span aria-hidden="true" class="li_settings fs1"></span>
+            <span aria-hidden="true" class="li_mail fs1"></span>
+            <span aria-hidden="true" class="li_key fs1"></span>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3 col-lg-3">
+
+    <!-- LIVE VISITORS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Số người truy cập</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Songuoitruycap</bold></p>
+            <p><img src="images/up-small.png" alt=""> 412 Max. | <img src="images/down-small.png" alt=""></p>
+        </div>
+    </div>
+
+    <!-- PAGE VIEWS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Số người đang online</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Songuoidangonline</bold></p>
+            <p><img src="images/up-small.png" alt=""></p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3 col-lg-3">
+    <!-- TOTAL SUBSCRIBERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Tổng số đơn hàng</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.TongDH</bold></p>
+     
+        </div>
+    </div>
+
+    <!-- FOLLOWERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Tổng doanh thu</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.TKDT</bold></p>
+         
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3 col-lg-3">
+    <!-- TOTAL SUBSCRIBERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Tổng số thành viên</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Thanhvien</bold></p>
+   
+        </div>
+    </div>
+
+    <!-- FOLLOWERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Chủ đề</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Chude</bold></p>
+  
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3 col-lg-3">
+    <!-- TOTAL SUBSCRIBERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Nhà xuất bản</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.NXB</bold></p>
+     
+        </div>
+    </div>
+
+    <!-- FOLLOWERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Tác giả</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Tacgia</bold></p>
+        
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3 col-lg-3">
+    <!-- TOTAL SUBSCRIBERS BLOCK -->
+    <div class="half-unit">
+        <dtitle>Tổng số sách</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Sach</bold></p>
+        
+        </div>
+    </div>
+
+    <!-- FOLLOWERS BLOCK -->
+    @*<div class="half-unit">
+        <dtitle>Tác giả</dtitle>
+        <hr>
+        <div class="cont">
+            <p><bold>@ViewBag.Tacgia</bold></p>
+            <p>SomeUser</p>
+        </div>
+    </div>*@
+</div>
+

@@ -1,0 +1,12 @@
+﻿@using BookStore.Models;
+@model List<NhaXuatBan>
+
+<div class="sidebar-widget-body">
+    <ul class="list">
+        @foreach (var item in Model)
+        {
+            <li><a href="#">@item.TenNXB</a></li>
+        }    
+    </ul>
+</div>
+

@@ -1,0 +1,73 @@
+﻿@using BookStore.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Sua gio hàng</h2>
+<div class="body-content outer-top-xs">
+    <div class="container">
+        <div class="row ">
+            <div class="shopping-cart">
+                <div class="shopping-cart-table ">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-romove item">Remove</th>
+                                    <th class="cart-description item">Image</th>
+                                    <th class="cart-product-name item">Product Name</th>                                  
+                                    <th class="cart-qty item">Quantity</th>
+                                    <th class="cart-sub-total item">Subtotal</th>
+                                    <th class="cart-total last-item">Grandtotal</th>
+                                    <th class="cart-edit item">Edit</th>
+                                </tr>
+                            </thead><!-- /thead -->
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="shopping-cart-btn">
+                                            <span class="">
+                                                <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
+                                            </span>
+                                        </div><!-- /.shopping-cart-btn -->
+                                    </td>
+                                </tr>
+                            </tfoot>
+                            @foreach (var item in Model)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td class="romove-item"><a href="/GioHang/XoaGioHang?iMaSP=@item.iMaSach" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
+                                        @*<td class="romove-item"> @Html.ActionLink("Delete", "XoaGioHang", new { @iMaSP = item.iMaSach } )</td>*@
+                                        <td class="cart-image">
+                                            <a class="entry-thumbnail" href="detail.html">
+                                                <img src="@Url.Content("~/HASP/"+item.sAnhBia)" width="150" height="159" />
+                                            </a>
+                                        </td>
+                                        <td class="cart-product-name-info">
+                                            <h4 class='cart-product-description'><a href="detail.html">@item.sTenSach</a></h4>
+
+
+                                        </td>
+                                       @using(Html.BeginForm("CapNhatGioHang","GioHang",new { @iMaSP = item.iMaSach }))
+                                       {                                     
+                                        <td class="cart-product-quantity">
+                                                @Html.TextBox("txtSoLuong",@item.iSoLuong,new {@size="2" })
+                                        </td>
+                                        <td class="cart-product-sub-total"><span class="cart-sub-total-price">@item.dDonGia</span></td>
+                                        <td class="cart-product-grand-total"><span class="cart-grand-total-price">@item.thanhTien</span></td>
+                                        <td class="cart-product-edit"><input type="submit" class="btn btn-upper btn-primary outer-left-xs"  value="Update"/></td> 
+                                                                       
+                                       }
+                                    </tr>
+                                </tbody><!-- /tbody -->
+                            }
+
+                        </table><!-- /table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BookStore.Models.TacGia>
+@helper Truncate(string input, int lenght)
+{
+if (input.Length < lenght)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, lenght)<text>...</text>
+}
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaTacGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTacGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TieuSu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr class="odd">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaTacGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTacGia)
+                </td>
+                <td>
+                    @Truncate(item.TieuSu, 100)
+                    @*@Html.DisplayFor(modelItem => item.TieuSu)*@
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "ChinhSua", new { @MaTacGia = item.MaTacGia }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Xoa", new { @MaTacGia = item.MaTacGia })
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>

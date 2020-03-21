@@ -1,0 +1,11 @@
+﻿@using BookStore.Models;
+@model List<TacGia>
+
+
+<div class="accordion-group">
+    @foreach (var item in Model)
+    {
+        <div class="accordion-heading"> <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed"> @item.TenTacGia </a> </div>
+    }   
+</div>
+

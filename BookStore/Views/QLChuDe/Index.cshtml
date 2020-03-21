@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BookStore.Models.ChuDe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaChuDe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenChuDe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr class="odd">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaChuDe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenChuDe)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "ChinhSua", new { @MaChuDe = item.MaChuDe }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Xoa", new { @MaChuDe = item.MaChuDe })
+                </td>
+            </tr>
+            </tbody>
+            }
+
+    </table>

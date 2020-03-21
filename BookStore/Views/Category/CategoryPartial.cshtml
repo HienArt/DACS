@@ -1,0 +1,17 @@
+﻿@using BookStore.Models;
+@model List<ChuDe>
+<div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Thể loại</div>
+<nav class="yamm megamenu-horizontal">
+    <ul class="nav">
+       @foreach (var item in Model)
+       {
+        <li class="dropdown menu-item">
+            <a href="@Url.Action("categoryBook","Category",new { @maChuDe = item.MaChuDe})" @*data-toggle="dropdown"*@><i class="icon fa fa-envira"></i>@item.TenChuDe</a>
+            <!-- /.dropdown-menu -->
+        </li>
+       }
+        
+        <!-- /.menu-item -->
+
+    </ul>
+</nav>

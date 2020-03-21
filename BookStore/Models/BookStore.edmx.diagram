@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba19c68ff887449987ef1abc322fd403" Name="Diagram1">
+        <EntityTypeShape EntityType="BookstoreeModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.ChuDe" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.DonHang" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.KhachHang" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.MaLoaiTV" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.MaLoaiTV_Quyen" Width="1.5" PointX="8" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.NhaXuatBan" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.Quyen" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.Review" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.Sach" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.sysdiagram" Width="1.5" PointX="2.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.TacGia" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookstoreeModel.ThanhVien" Width="1.5" PointX="8" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="BookstoreeModel.FK_ChiTietDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_ChiTietDonHang_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_Sach_ChuDe" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_Review_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_MaLoaiTV_Quyen_MaLoaiTV" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_ThanhVien_MaLoaiTV" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_MaLoaiTV_Quyen_Quyen" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_Sach_NhaXuatBan" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_Review_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreeModel.FK_Sach_TacGia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

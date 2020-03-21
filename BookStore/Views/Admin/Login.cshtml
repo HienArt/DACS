@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container" style="color:white">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+            <div class="col-md-4">
+                @using (Html.BeginForm())
+            {
+                    <div class="form-group">
+                        <label class="info-title" for="exampleInputEmail1">Tài Khoản <span>*</span></label>
+                        <input type="text" class="form-control unicase-form-control text-input" name="txtTaikhoan">
+                    </div>
+                    <div class="form-group">
+                        <label class="info-title" for="exampleInputPassword1">Mật Khẩu <span>*</span></label>
+                        <input type="password" class="form-control unicase-form-control text-input" name="txtMatkhau">
+                    </div>
+                    <button type="submit" class="btn-upper btn btn-primary checkout-page-button" id="btnSubmit" name="btnSubmit">Login</button>
+                }
+            </div>
+        <div class="col-md-4">
+        </div>
+        
+        </div>
+</div>
+  
